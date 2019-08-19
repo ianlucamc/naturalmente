@@ -1,3 +1,4 @@
+-- CRIAÇÃO DO BANCO DE DADOS
 
 CREATE TABLE Produtos (
                 idProdutos INT NOT NULL,
@@ -28,7 +29,7 @@ CREATE TABLE Pessoa (
 CREATE TABLE Produtor (
                 idPessoa INT NOT NULL,
                 cnpj CHAR(14) NOT NULL,
-                ie VARCHAR NOT NULL,
+                ie VARCHAR(100) NOT NULL,
                 PRIMARY KEY (idPessoa)
 );
 
@@ -44,7 +45,7 @@ CREATE TABLE ItensProdutor (
 CREATE TABLE Cliente (
                 idPessoa INT NOT NULL,
                 cpf CHAR(11) NOT NULL,
-                rg VARCHAR NOT NULL,
+                rg VARCHAR(16) NOT NULL,
                 PRIMARY KEY (idPessoa)
 );
 
