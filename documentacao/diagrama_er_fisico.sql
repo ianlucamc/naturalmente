@@ -1,11 +1,25 @@
 -- CRIAÇÃO DO BANCO DE DADOS
+CREATE TABLE Estado (
+                idEstado INT AUTO_INCREMENT NOT NULL,
+                nome VARCHAR(50) NOT NULL,
+                sigla CHAR(2) NOT NULL,
+                PRIMARY KEY (idEstado)
+);
+
+
+CREATE TABLE Cidade (
+                idCidade INT AUTO_INCREMENT NOT NULL,
+                nome VARCHAR(50) NOT NULL,
+                idEstado INT NOT NULL,
+                PRIMARY KEY (idCidade)
+);
 
 CREATE TABLE Produtos (
                 idProdutos INT NOT NULL,
                 nome VARCHAR(50) NOT NULL,
-                preco DOUBLE PRECISIONS NOT NULL,
+                preco DOUBLE NOT NULL,
                 validade DATE NOT NULL,
-                descricao VARCHAR(100) NOT NULL,
+                descricao VARCHAR(240) NOT NULL,
                 PRIMARY KEY (idProdutos)
 );
 
@@ -15,20 +29,21 @@ CREATE TABLE Pessoa (
                 nome VARCHAR(50) NOT NULL,
                 email VARCHAR(50) NOT NULL,
                 senha VARCHAR(20) NOT NULL,
-                cidade VARCHAR(50) NOT NULL,
                 bairro VARCHAR(50) NOT NULL,
                 rua VARCHAR(50) NOT NULL,
                 numero INT NOT NULL,
                 cep VARCHAR(8) NOT NULL,
                 complemento VARCHAR(100),
-                fone CHAR(11) NOT NULL,
+                fone CHAR(11),
+                celular CHAR(15) NOT NULL,
+                idCidade INT NOT NULL,
                 PRIMARY KEY (idPessoa)
 );
 
 
 CREATE TABLE Produtor (
                 idPessoa INT NOT NULL,
-                cnpj CHAR(14) NOT NULL,
+                cnpj CHAR(18) NOT NULL,
                 ie VARCHAR(100) NOT NULL,
                 PRIMARY KEY (idPessoa)
 );
@@ -44,8 +59,8 @@ CREATE TABLE ItensProdutor (
 
 CREATE TABLE Cliente (
                 idPessoa INT NOT NULL,
-                cpf CHAR(11) NOT NULL,
-                rg VARCHAR(16) NOT NULL,
+                cpf CHAR(14) NOT NULL,
+                rg VARCHAR(100) NOT NULL,
                 PRIMARY KEY (idPessoa)
 );
 
@@ -55,7 +70,7 @@ CREATE TABLE Venda (
                 status BOOLEAN NOT NULL,
                 dataPedido DATE NOT NULL,
                 dataEntrega DATE NOT NULL,
-                valorTotal DOUBLE PRECISIONS NOT NULL,
+                valorTotal DOUBLE NOT NULL,
                 idCliente INT NOT NULL,
                 PRIMARY KEY (idVenda)
 );
@@ -65,10 +80,21 @@ CREATE TABLE ItensVenda (
                 idVenda INT NOT NULL,
                 idItensProdutor INT NOT NULL,
                 qtde INT NOT NULL,
-                precoVendido DOUBLE PRECISIONS NOT NULL,
+                precoVendido DOUBLE NOT NULL,
                 PRIMARY KEY (idVenda, idItensProdutor)
 );
 
+ALTER TABLE Cidade ADD CONSTRAINT estado_cidade_fk
+FOREIGN KEY (idEstado)
+REFERENCES Estado (idEstado)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE Pessoa ADD CONSTRAINT cidade_pessoa_fk
+FOREIGN KEY (idCidade)
+REFERENCES Cidade (idCidade)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
 
 ALTER TABLE ItensProdutor ADD CONSTRAINT produtos_itensprodutor_fk
 FOREIGN KEY (idProdutos)

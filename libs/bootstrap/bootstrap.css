@@ -838,9 +838,9 @@ pre code {
     max-width: 100%;
   }
   .col-sm-1 {
-    -ms-flex: 0 0 5.333333%;
-    flex: 0 0 5.333333%;
-    max-width: 5.333333%;
+    -ms-flex: 6.6%;
+    flex: 6.6%;
+    max-width: 6.6%;
   }
   .col-sm-2 {
     -ms-flex: 0 0 16.666667%;
@@ -2659,13 +2659,13 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #23272b;
   border-color: #343a40;
 }
 
 .btn-dark:hover {
   color: #fff;
-  background-color: #23272b;
+  background-color: #343a40;
   border-color: #1d2124;
 }
 
@@ -2675,8 +2675,8 @@ fieldset:disabled a.btn {
 
 .btn-dark.disabled, .btn-dark:disabled {
   color: #fff;
-  background-color: #343a40;
-  border-color: #343a40;
+  background-color: #23272b;
+  border-color: #1d2124;
 }
 
 .btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,
