@@ -14,20 +14,17 @@ function navega($pagina){
     case 'cadastro-inserir':
       require 'controle/cadastro-inserir.php';
       break;
-    case 'incluirhorta':
-      require 'paginas/cadastro.php';
+    case 'alterarhorta':
+      require 'paginas/cadastroalterar.php';
       break;
     case 'cadastro-alterar':
       require 'controle/cadastro-alterar.php';
       break;
-    case 'alterarhorta':
-      require 'paginas/cadastroalterar.php';
+    case 'excluirhorta':
+      require 'paginas/cadastroexcluir.php';
       break;
     case 'cadastro-excluir':
       require 'controle/cadastro-excluir.php';
-      break;
-    case 'excluirhorta':
-      require 'paginas/cadastroexcluir.php';
       break;
 
     case 'login':
@@ -35,6 +32,17 @@ function navega($pagina){
       break;
     case 'login-entrar':
       require 'controle/login-entrar.php';
+      break;
+    case 'login-sair':
+      require 'controle/login-sair.php';
+      break;
+
+    case 'produtos':
+      require 'paginas/produtos.php';
+      break;
+
+    case 'venda':
+      require 'paginas/venda.php';
       break;
 
     default:

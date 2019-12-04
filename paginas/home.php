@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-sm-9 mt-4 py-5 mx-auto">
           <a href="?pagina=hortas"> <button type="button" class="btn btn-dark btn-lg btn-block" id="Hortas">ENCONTRE HORTAS PRÓXIMAS A VOCÊ</button></a><br>
-          <a href="?pagina=cadastro"> <button type="button" class="btn btn-dark btn-lg btn-block" id="Cadastro">CADASTRE JÁ SUA HORTA</button></a>
+          <a href="?pagina=cadastro"> <button type="button" class="btn btn-dark btn-lg btn-block" id="Cadastro">CADASTRE-SE</button></a>
 
         </div>
       </div>

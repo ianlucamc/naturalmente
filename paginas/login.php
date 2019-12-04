@@ -11,7 +11,7 @@
             <label>Senha:</label><br>
             <input type="password" name="senha" value="" class="form-control obrigatorio" required>
 
-            <button type="submit" class="mt-3 btn btn-success">Entrar</button>
+            <button type="submit" name="btnLogin" class="mt-3 btn btn-success">Entrar</button>
             <br>
             <a href="#">Recuperar senha</a>
           </form>

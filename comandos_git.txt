@@ -1,0 +1,29 @@
+﻿Baixar o repositório do Github:
+- git clone https://https://github.com/ianlucamc/piw.git
+
+Adicionar as mudanças feitas na nova versão
+- git add *
+
+Configurar o usuário que fará/registrará as alterações
+- git config user.email "ianlucamc@gmail.com"
+
+Registrar as mudanças (nova versão)
+- git commit -m "Mensagem explicando mudanças"
+
+Enviar código para repositório na Internet
+- git push origin master
+
+
+
+Para apagar pastas no repositório:
+Sincronizar com o repositório remoto
+- git pull origin master
+
+Remover pasta localmente
+- git rm -r NOMEDAPASTA
+
+Fazer commit das modificações
+- git commit -m "Remover pastas"
+
+Sincronizar com repositório remoto
+- git push origin master
